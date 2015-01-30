@@ -62,6 +62,8 @@ namespace Game
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
 			
+			//Spring s = new Spring(gameScene, new Vector2(200, 0));
+			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}

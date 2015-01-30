@@ -51,5 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppMain.cs" />
+    <Compile Include="Spring.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Spring.png" />
+    <Content Include="SpringTop.png" />
+    <Content Include="Trap.png" />
   </ItemGroup>
 </Project>
