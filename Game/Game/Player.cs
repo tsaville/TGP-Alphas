@@ -19,7 +19,8 @@ namespace Game
 		private static int 			frameTime, animationDelay,
 									noOnSpritesheetWidth,
 									noOnSpritesheetHeight,
-									widthCount,	heightCount;
+									widthCount,	heightCount,
+									speed;
 		
 		//Accessors.
 		//public SpriteUV Sprite { get{return sprite;} }
@@ -48,6 +49,7 @@ namespace Game
 			animationDelay = 4;
 			widthCount = 0;
 			heightCount = 0;
+			speed = 3;
 		}
 		
 		public void Dispose()
@@ -81,8 +83,8 @@ namespace Game
 			
 			frameTime++;
 			
-			sprite.Position = new Vector2(sprite.Position.X+3,0.0f);
-
+			//Move Player
+			sprite.Position = new Vector2(sprite.Position.X + speed, sprite.Position.Y);
 			
 			//Storing Bounds2 box data for collisions
 			min.X			= sprite.Position.X;
