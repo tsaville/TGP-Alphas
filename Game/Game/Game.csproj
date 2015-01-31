@@ -57,7 +57,5 @@
     <Content Include="textures\playerSprite.png" />
     <Content Include="textures\playerSpriteSheet.png" />
     <Content Include="textures\stick.png" />
-    <Content Include="textures\player.png" />
-    <Content Include="textures\Walk.png" />
   </ItemGroup>
 </Project>

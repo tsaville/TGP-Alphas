@@ -16,6 +16,7 @@ namespace Game
 		private static TextureInfo	textureInfo;
 		private static Vector2		min, max;
 		private static Bounds2		box;
+		private static float 		scale;
 		private static int 			frameTime, animationDelay,
 									noOnSpritesheetWidth,
 									noOnSpritesheetHeight,
@@ -28,6 +29,14 @@ namespace Game
 		//Public functions.
 		public Player (Scene scene)
 		{
+			//Initialise Variables
+			frameTime = 0;
+			animationDelay = 4;
+			widthCount = 0;
+			heightCount = 0;
+			speed = 3;
+			scale = 0.75f;
+			
 			//SpriteSheet Info
 			textureInfo  = new TextureInfo("/Application/textures/stick.png");
 			noOnSpritesheetWidth = 4;
@@ -38,18 +47,11 @@ namespace Game
 			sprite 			= new SpriteUV(textureInfo);
 			sprite.UV.S = new Vector2(1.0f/noOnSpritesheetWidth,1.0f/noOnSpritesheetHeight);
 			sprite.Quad.S 	= new Vector2(textureInfo.TextureSizef.X/noOnSpritesheetWidth, textureInfo.TextureSizef.Y/noOnSpritesheetHeight);
-			//sprite.Scale = new Vector2(0.5f,0.5f);
+			sprite.Scale = new Vector2(scale, scale);
 			sprite.Position = new Vector2(Director.Instance.GL.Context.GetViewport().Width / 5, 0.0f);
 			
 			//Add to the current scene.
 			scene.AddChild(sprite);
-			
-			//Initialise Variables
-			frameTime = 0;
-			animationDelay = 4;
-			widthCount = 0;
-			heightCount = 0;
-			speed = 3;
 		}
 		
 		public void Dispose()
@@ -89,26 +91,28 @@ namespace Game
 			//Storing Bounds2 box data for collisions
 			min.X			= sprite.Position.X;
 			min.Y			= sprite.Position.Y;
-			max.X			= sprite.Position.X + (textureInfo.TextureSizef.X);
-			max.Y			= sprite.Position.Y + (textureInfo.TextureSizef.Y);
+			max.X			= sprite.Position.X + ((textureInfo.TextureSizef.X/noOnSpritesheetWidth)*scale);
+			max.Y			= sprite.Position.Y + ((textureInfo.TextureSizef.Y/noOnSpritesheetHeight)*scale);
 			box.Min 		= min;			
 			box.Max 		= max;
 		}
 		
-		public void SetYPos(int y)
-		{
-			sprite.Position = new Vector2(sprite.Position.X, y);
-		}
+		//Set the height of the player
+		public void SetYPos(int y) { sprite.Position = new Vector2(sprite.Position.X, y); }
 		
-		public Vector2 GetPos()
-		{
-			return sprite.Position;
-		}
+		//Get and set the size of the player
+		public void SetScale(float s) { sprite.Scale = new Vector2(s, s); }
+		public float GetScale() { return scale; }
 		
-		public Bounds2 GetBox()
-		{	
-			return box;
-		}
+		//Get and set the speed of the player
+		public void SetSpeed(int s) { speed = s; }
+		public int GetSpeed(){ return speed; }
+		
+		//Get the position of the player
+		public Vector2 GetPos() { return sprite.Position; }
+		
+		//Get the collision box of the player
+		public Bounds2 GetBox() { return box; }
 	}
 }
 

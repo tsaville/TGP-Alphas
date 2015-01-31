@@ -10,10 +10,4 @@ System.ServiceModel.dll
 Sce.PlayStation.HighLevel.UI.dll
 textures/playerSprite.png
 textures/playerSpriteSheet.png
-textures/LINK.png
-textures/walksequence_spritesheet.png
-textures/player.png
-textures/$linkEdit.png
-textures/player-running.png
-textures/spritesheet.png
 textures/stick.png
