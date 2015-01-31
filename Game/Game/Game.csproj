@@ -51,5 +51,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppMain.cs" />
+    <Compile Include="Player.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="textures\playerSprite.png" />
+    <Content Include="textures\playerSpriteSheet.png" />
+    <Content Include="textures\LINK.png" />
+    <Content Include="textures\walksequence_spritesheet.png" />
+    <Content Include="textures\player.png" />
+    <Content Include="textures\%24linkEdit.png" />
+    <Content Include="textures\player-running.png" />
+    <Content Include="textures\spritesheet.png" />
+    <Content Include="textures\stick.png" />
   </ItemGroup>
 </Project>

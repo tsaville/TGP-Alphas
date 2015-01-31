@@ -17,6 +17,7 @@ namespace Game
 		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
 		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		
+		private static Player 		player;
 		// Member Variables go here
 				
 		public static void Main (string[] args)
@@ -62,6 +63,8 @@ namespace Game
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
 			
+			player = new Player(gameScene);
+			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
@@ -78,6 +81,7 @@ namespace Game
 			}
 				
 			// Move update code here
+			player.Update(0);
 			
 		}		
 	}
