@@ -33,3 +33,5 @@ A:\Documents\TGP-Alphas\Game\Game\bin\Debug\Game-unsigned\Application\textures\p
 A:\Documents\TGP-Alphas\Game\Game\bin\Debug\Game-signed\Application\textures\playerSpriteSheet.png
 A:\Documents\TGP-Alphas\Game\Game\bin\Debug\Game-unsigned\Application\textures\stick.png
 A:\Documents\TGP-Alphas\Game\Game\bin\Debug\Game-signed\Application\textures\stick.png
+A:\Documents\TGP-Alphas\Game\Game\bin\Debug\Game-unsigned\Application\textures\stick2.png
+A:\Documents\TGP-Alphas\Game\Game\bin\Debug\Game-signed\Application\textures\stick2.png

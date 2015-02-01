@@ -63,6 +63,7 @@ namespace Game
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
 			
+			//Create Game Entities
 			player = new Player(gameScene);
 			
 			//Run the scene.
@@ -80,9 +81,12 @@ namespace Game
 				
 			}
 				
-			// Move update code here
+			// Update code here
 			player.Update(0);
 			
+			//Update the camera to follow the player
+			gameScene.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f),
+			                            new Vector2(player.GetPos().X + 400, Director.Instance.GL.Context.GetViewport().Height*0.5f));
 		}		
 	}
 }
