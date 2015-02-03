@@ -18,6 +18,8 @@ namespace Game
 		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		
 		// Member Variables go here
+		private static Background	background;
+		private static TntWall		tntWall;
 				
 		public static void Main (string[] args)
 		{
@@ -39,7 +41,8 @@ namespace Game
 			
 			//Clean up after ourselves.
 			//Dispose code goes here
-			
+			background.Dispose();
+			tntWall.Dispose ();
 			Director.Terminate ();
 		}
 
@@ -62,6 +65,9 @@ namespace Game
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
 			
+			background 		= new Background(gameScene);
+			tntWall = new TntWall(gameScene);
+			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
@@ -70,7 +76,10 @@ namespace Game
 		{
 			//Determine whether the player tapped the screen
 			var touches = Touch.GetData(0);
-			
+			var y = Input2.Touch00.Pos.Y;
+			var x = Input2.Touch00.Pos.X;
+			tntWall.Update (0.0f, x, y);
+			background.Update(0.0f);
 			//If tapped, do something
 			if(touches.Count > 0)
 			{

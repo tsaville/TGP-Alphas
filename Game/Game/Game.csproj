@@ -51,5 +51,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppMain.cs" />
+    <Compile Include="TntWall.cs" />
+    <Compile Include="Background.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="textures\dclouds.png" />
+    <Content Include="textures\lavawall3.png" />
+    <Content Include="textures\volcano.png" />
+    <Content Include="textures\tntbox.png" />
+    <Content Include="textures\tntplun.png" />
+    <Content Include="textures\rock.png" />
+    <Content Include="textures\explo.png" />
+    <Content Include="textures\volc2.png" />
+    <Content Include="textures\brownwall.png" />
+    <Content Include="textures\cavestart.png" />
+    <Content Include="textures\dclouds2.png" />
+    <Content Include="textures\dyno.png" />
   </ItemGroup>
 </Project>
