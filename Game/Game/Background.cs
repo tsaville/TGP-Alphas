@@ -135,7 +135,7 @@ namespace Game
 		
 		public void Update(float deltaTime)
 		{	
-			UpdateWalls(deltaTime);	
+			//UpdateWalls(deltaTime);	
 			UpdateSmog(deltaTime);
 		}
 		

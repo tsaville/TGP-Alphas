@@ -48,7 +48,7 @@ namespace Game
 			dynoSprite.Position = new Vector2(320.0f,18.0f);
 			
 			pluSprite.Quad.S 	= pluTextureInfo.TextureSizef;
-			pluSprite.Position = new Vector2(200.0f,84.0f);
+			pluSprite.Position = new Vector2(200.0f,64.0f);
 			
 			rockSprite.Quad.S 	= rockTextureInfo.TextureSizef;
 			rockSprite.Position = new Vector2(400.0f,20.0f);
@@ -82,12 +82,12 @@ namespace Game
 					+ (Director.Instance.GL.Context.GetViewport().Width / 2)
 					- (pluTextureInfo.TextureSizef.Y / 2);
 			
-			if(yPos <= pluSprite.Position.Y + 64 && yPos >= pluSprite.Position.Y - 64 
+			if(yPos <= pluSprite.Position.Y + 64 && yPos >= pluSprite.Position.Y + 16 
 			   && xPos <= pluSprite.Position.X + 32 && xPos >= pluSprite.Position.X - 32)
 				
 				{
 					if(yPos < 84.0f && yPos > 24.0f)
-						pluSprite.Position = new Vector2(200.0f , yPos);	
+						pluSprite.Position = new Vector2(200.0f , yPos - 25);	
 				}	
 			if(pluSprite.Position.Y <= 30.0f)
 				blowUpRock ();
